@@ -15,6 +15,23 @@ int main()
     cin >> weight >> distance;
 
     // TODO
+    if (weight <= 0 || distance <= 10 || distance > 3000 || weight > 20){
+        cout << "Wrong input" << endl;
+        return 0;
+    }
+    if (weight <= 2)
+        rate  = rate1;
+    else if (weight <= 6)
+        rate = rate2;
+    else if (weight <= 10)
+        rate = rate3;
+    else
+        rate = rate4;
+
+    if (distance < 500)
+        total_charge = rate;
+    else
+        total_charge = (distance/500.0) * rate;
 
     cout << setw(10) << left << setprecision(2) << fixed;
     cout << total_charge << endl;
